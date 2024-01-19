@@ -1,0 +1,34 @@
+{
+  "name": "cypress-testing-applications",
+  "version": "1.0.0",
+  "description": "Repositório dedicado aos estudos e implementações de testes automatizados utilizando Cypress.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:run": "cypress run ",
+    "postcypress:run": "node ./cypress/support/cucumber-html-reporter.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/support/step-definitions/",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".json"
+    }
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "cucumber-html-reporter": "^7.1.1",
+    "cypress": "^13.6.3",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "faker": "^6.6.6"
+  },
+  "dependencies": {
+    "faker-br": "^0.4.1",
+    "gender-detection": "^0.1.0"
+  }
+}

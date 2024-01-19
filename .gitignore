@@ -5,9 +5,6 @@ node_modules/
 /cypress/videos/
 /cypress/screenshots/
 
-# Ignore arquivos de configuração específicos do usuário
-cypress.env.json
-cypress.json
 
 # Ignore relatórios e resultados de testes gerados pelo Cypress
 /cypress/results/

@@ -1,0 +1,263 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Registro e Login no site",
+    "line": 2,
+    "id": "registro-e-login-no-site",
+    "tags": [
+      {
+        "name": "@account",
+        "line": 1
+      }
+    ],
+    "uri": "account.feature",
+    "elements": [
+      {
+        "id": "registro-e-login-no-site;realiza-o-cadastro",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Realiza o cadastro",
+        "tags": [
+          {
+            "name": "@account",
+            "line": 1
+          },
+          {
+            "name": "@CT-THS01",
+            "line": 7
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "que um usuário acesse o site desejado",
+            "result": {
+              "status": "passed",
+              "duration": 2875000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "direcionar até a pagina de Cadastro, preencher o e-mail e as informações necessarias para o cadastro",
+            "result": {
+              "status": "passed",
+              "duration": 5621000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "clicar no botão \"Register\"",
+            "result": {
+              "status": "passed",
+              "duration": 2106000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "o usuário será registrado com sucesso e será direcionado para a página inicial da conta",
+            "result": {
+              "status": "passed",
+              "duration": 50000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "registro-e-login-no-site;valida-informar-e-mail-existente-na-tela-de-cadastro",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Valida informar e-mail existente na tela de cadastro",
+        "tags": [
+          {
+            "name": "@account",
+            "line": 1
+          },
+          {
+            "name": "@CT-THS02",
+            "line": 13
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "que um usuário acesse o site desejado",
+            "result": {
+              "status": "passed",
+              "duration": 1185000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "direcionar até a pagina de Cadastro e informar um e-mail já cadastrado",
+            "result": {
+              "status": "passed",
+              "duration": 2411000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "clicar no botão \"Create an account\"",
+            "result": {
+              "status": "passed",
+              "duration": 1175000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "o usuário receberá um alerta de erro informando \"An account using this email address has already been registered. Please enter a valid password or request a new one.\"",
+            "result": {
+              "status": "passed",
+              "duration": 95000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "registro-e-login-no-site;validar-e-mail-inválido-na-tela-de-cadastro",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "Validar e-mail inválido na tela de cadastro",
+        "tags": [
+          {
+            "name": "@account",
+            "line": 1
+          },
+          {
+            "name": "@CT-THS03",
+            "line": 19
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "que um usuário acesse o site desejado",
+            "result": {
+              "status": "passed",
+              "duration": 976000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 21,
+            "name": "direcionar até a pagina de Cadastro e informar um e-mail inválido",
+            "result": {
+              "status": "passed",
+              "duration": 2054000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "clicar no botão \"Create an account\"",
+            "result": {
+              "status": "passed",
+              "duration": 1122000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "o usuário receberá um alerta de erro informando \"Invalid email address.\"",
+            "result": {
+              "status": "passed",
+              "duration": 36000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "registro-e-login-no-site;validar-cadastro-de-campos-obrigatórios-na-tela-de-cadastro",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "Validar cadastro de campos obrigatórios na tela de cadastro",
+        "tags": [
+          {
+            "name": "@account",
+            "line": 1
+          },
+          {
+            "name": "@CT-THS04",
+            "line": 25
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "que um usuário acesse o site desejado",
+            "result": {
+              "status": "passed",
+              "duration": 1124000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 27,
+            "name": "direcionar até a pagina de Cadastro",
+            "result": {
+              "status": "passed",
+              "duration": 3533000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "não preencher os campos obrigatórios 'First name, Last name, Email e Password'",
+            "result": {
+              "status": "passed",
+              "duration": 357000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "clicar no botão \"Register\"",
+            "result": {
+              "status": "passed",
+              "duration": 1771000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "o usuário receberá um alerta de erro \"There are 4 errors\" e deve exibir os campos obrigatórios no alerta de erro",
+            "result": {
+              "status": "passed",
+              "duration": 159000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
