@@ -27,6 +27,8 @@ const locators = {
     TXT_ERROR_ACCOUNT: 'ol > li',
     PARAGRAPH_ERROR: '.alert > p',
     LIST_ERROR: 'ol > :nth-child(index)',//Lembrar o index sera usado para fazer o replace para o numero desejado
+    BTN_LOGIN: '#SubmitLogin > span',
+    TXT_NAME_ACCOUNT: '.account > span',
 
 }
 
@@ -34,6 +36,7 @@ const locators = {
 
 class LoginPage { 
     acessWebsite(){
+        cy.clearCookies();
         cy.visit('/');
     }
 
@@ -88,6 +91,9 @@ class LoginPage {
             case 'Register':
                 button = locators.BTN_REGISTER;
                 break;
+            case 'Sign in':
+                button = locators.BTN_LOGIN;
+                break;
             default:
                 throw new Error(`Botão não reconhecido: ${btnName}`);
         }
@@ -121,7 +127,6 @@ class LoginPage {
 
     goLoginScreen(){
         cy.get(locators.OPT_LOGIN).click().wait(1000);
-        cy.get(locators.TXT_CREATE_ACCOUNT).should('have.text', 'Create an account');
     }
 
     notFillTheFields(){
@@ -139,7 +144,16 @@ class LoginPage {
         for(var i=1; i<=4; i++){
             cy.get(locators.LIST_ERROR.replace('index', i)).should('be.visible').should('contain',fieldsName[i-1]);
         }
-    }       
+    }
+
+    loginWithUser(){
+        cy.get(locators.INPUT_EMAIL).type(Cypress.env('Account').email);
+        cy.get(locators.INPUT_PASS).type(Cypress.env('Account').pass,{log:false});
+    }
+
+    validateLoginSuccess(){
+        cy.get(locators.TXT_NAME_ACCOUNT).invoke('text').should('eq',Cypress.env('Account').name);
+    }
 }
 
 module.exports = new LoginPage();

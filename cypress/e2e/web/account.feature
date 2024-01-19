@@ -28,3 +28,10 @@ Feature: Registro e Login no site
         And não preencher os campos obrigatórios 'First name, Last name, Email e Password' 
         And clicar no botão "Register"
         Then o usuário receberá um alerta de erro "There are 4 errors" e deve exibir os campos obrigatórios no alerta de erro
+
+    @CT-THS05
+    Scenario: Validar login com sucesso
+        When direcionar até a pagina de Login
+        And usuário preencher o e-mail e senha
+        And clicar no botão "Sign in"
+        Then valida que o login realizado com sucesso e direcionado para a página inicial da conta

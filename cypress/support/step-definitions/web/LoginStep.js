@@ -50,5 +50,16 @@ Then(/^o usuário receberá um alerta de erro "([^"]*)" e deve exibir os campos 
 	loginPage.validateRequiredErrorAlerts(msgError);
 });
 
+When(/^direcionar até a pagina de Login$/, () => {
+    loginPage.goLoginScreen();
+});
 
+And(/^usuário preencher o e-mail e senha$/, () => {
+    loginPage.loginWithUser();
+});
+
+Then(/^valida que o login realizado com sucesso e direcionado para a página inicial da conta$/, () => {
+    loginPage.validateUrlWebSite('my-account');
+    loginPage.validateLoginSuccess();
+});
 

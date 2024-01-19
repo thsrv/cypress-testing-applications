@@ -36,7 +36,7 @@
             "name": "que um usuário acesse o site desejado",
             "result": {
               "status": "passed",
-              "duration": 2875000000
+              "duration": 5383000000
             }
           },
           {
@@ -46,7 +46,7 @@
             "name": "direcionar até a pagina de Cadastro, preencher o e-mail e as informações necessarias para o cadastro",
             "result": {
               "status": "passed",
-              "duration": 5621000000
+              "duration": 5884000000
             }
           },
           {
@@ -56,7 +56,7 @@
             "name": "clicar no botão \"Register\"",
             "result": {
               "status": "passed",
-              "duration": 2106000000
+              "duration": 2191000000
             }
           },
           {
@@ -66,7 +66,7 @@
             "name": "o usuário será registrado com sucesso e será direcionado para a página inicial da conta",
             "result": {
               "status": "passed",
-              "duration": 50000000
+              "duration": 68000000
             }
           }
         ]
@@ -95,7 +95,7 @@
             "name": "que um usuário acesse o site desejado",
             "result": {
               "status": "passed",
-              "duration": 1185000000
+              "duration": 1279000000
             }
           },
           {
@@ -105,7 +105,7 @@
             "name": "direcionar até a pagina de Cadastro e informar um e-mail já cadastrado",
             "result": {
               "status": "passed",
-              "duration": 2411000000
+              "duration": 2344000000
             }
           },
           {
@@ -115,7 +115,7 @@
             "name": "clicar no botão \"Create an account\"",
             "result": {
               "status": "passed",
-              "duration": 1175000000
+              "duration": 1127000000
             }
           },
           {
@@ -125,7 +125,7 @@
             "name": "o usuário receberá um alerta de erro informando \"An account using this email address has already been registered. Please enter a valid password or request a new one.\"",
             "result": {
               "status": "passed",
-              "duration": 95000000
+              "duration": 97000000
             }
           }
         ]
@@ -154,7 +154,7 @@
             "name": "que um usuário acesse o site desejado",
             "result": {
               "status": "passed",
-              "duration": 976000000
+              "duration": 1030000000
             }
           },
           {
@@ -164,7 +164,7 @@
             "name": "direcionar até a pagina de Cadastro e informar um e-mail inválido",
             "result": {
               "status": "passed",
-              "duration": 2054000000
+              "duration": 1994000000
             }
           },
           {
@@ -184,7 +184,7 @@
             "name": "o usuário receberá um alerta de erro informando \"Invalid email address.\"",
             "result": {
               "status": "passed",
-              "duration": 36000000
+              "duration": 34000000
             }
           }
         ]
@@ -213,7 +213,7 @@
             "name": "que um usuário acesse o site desejado",
             "result": {
               "status": "passed",
-              "duration": 1124000000
+              "duration": 968000000
             }
           },
           {
@@ -223,7 +223,7 @@
             "name": "direcionar até a pagina de Cadastro",
             "result": {
               "status": "passed",
-              "duration": 3533000000
+              "duration": 3481000000
             }
           },
           {
@@ -233,7 +233,7 @@
             "name": "não preencher os campos obrigatórios 'First name, Last name, Email e Password'",
             "result": {
               "status": "passed",
-              "duration": 357000000
+              "duration": 263000000
             }
           },
           {
@@ -243,7 +243,7 @@
             "name": "clicar no botão \"Register\"",
             "result": {
               "status": "passed",
-              "duration": 1771000000
+              "duration": 1713000000
             }
           },
           {
@@ -253,7 +253,76 @@
             "name": "o usuário receberá um alerta de erro \"There are 4 errors\" e deve exibir os campos obrigatórios no alerta de erro",
             "result": {
               "status": "passed",
-              "duration": 159000000
+              "duration": 174000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "registro-e-login-no-site;validar-login-com-sucesso",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "Validar login com sucesso",
+        "tags": [
+          {
+            "name": "@account",
+            "line": 1
+          },
+          {
+            "name": "@CT-THS05",
+            "line": 32
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "que um usuário acesse o site desejado",
+            "result": {
+              "status": "passed",
+              "duration": 2062000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "direcionar até a pagina de Login",
+            "result": {
+              "status": "passed",
+              "duration": 1788000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "usuário preencher o e-mail e senha",
+            "result": {
+              "status": "passed",
+              "duration": 837000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "clicar no botão \"Sign in\"",
+            "result": {
+              "status": "passed",
+              "duration": 1901000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "valida que o login realizado com sucesso e direcionado para a página inicial da conta",
+            "result": {
+              "status": "passed",
+              "duration": 64000000
             }
           }
         ]
