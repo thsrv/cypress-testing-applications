@@ -25,7 +25,7 @@ const locators = {
     TARGE_ALERT: '.alert',
     ALERT_ERROR_ACCOUNT: '#create_account_error',
     TXT_ERROR_ACCOUNT: 'ol > li',
-    PARAGRAPH_ERROR: '.alert > p',
+    LOGIN_ERROR_TITLE: '#center_column > :nth-child(2) > p',
     LIST_ERROR: 'ol > :nth-child(index)',//Lembrar o index sera usado para fazer o replace para o numero desejado
     BTN_LOGIN: '#SubmitLogin > span',
     TXT_NAME_ACCOUNT: '.account > span',
@@ -138,7 +138,7 @@ class LoginPage {
         cy.get(locators.INPUT_PASS).should('have.value', '');
         }
 
-    validateRequiredErrorAlerts(msg){
+    validateRequiredErrorAlerts(){
         const fieldsName = ['lastname','firstname','email','passwd']
         cy.get(locators.TARGE_ALERT).should('be.visible');
         for(var i=1; i<=4; i++){
@@ -146,13 +146,22 @@ class LoginPage {
         }
     }
 
-    loginWithUser(){
-        cy.get(locators.INPUT_EMAIL).type(Cypress.env('Account').email);
-        cy.get(locators.INPUT_PASS).type(Cypress.env('Account').pass,{log:false});
+    loginWithUser(email,pass){
+        if(email !== null){
+            cy.get(locators.INPUT_EMAIL).type(email);
+        }
+        if(pass !== null){
+            cy.get(locators.INPUT_PASS).type(pass,{log:false});
+        }
     }
 
     validateLoginSuccess(){
         cy.get(locators.TXT_NAME_ACCOUNT).invoke('text').should('eq',Cypress.env('Account').name);
+    }
+
+    incorrectLoginAlert(error){ 
+        cy.get(locators.LOGIN_ERROR_TITLE).should('be.visible');
+        cy.get(locators.TXT_ERROR_ACCOUNT).should('be.visible').invoke('text').should('contain',error);
     }
 }
 
