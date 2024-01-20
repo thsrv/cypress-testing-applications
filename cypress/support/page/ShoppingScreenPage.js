@@ -6,7 +6,7 @@ const { ctibor, xayrullo } = require("gender-detection/genders/male");
 const locators = {
     BTN_HOME: 'li > .btn > span',
     MENU_WOMEN: '.sf-menu > :nth-child(1) > [href="http://www.automationpractice.pl/index.php?id_category=3&controller=category"]',
-    FIRST_PRODUCT_LIST: ':nth-child(1) > .product-container',
+    FIRST_PRODUCT_LIST: '#center_column > ul > li:nth-child(1) > div > div.right-block > h5 > a',
     NAME_PRODUCT: 'h1',
     PRICE_PRODUCT: '#our_price_display',
     PRODUCT_AVAILABILITY: '#availability_value',
@@ -15,8 +15,8 @@ const locators = {
     BTN_QUANTITY_MIN: '.icon-minus',
     BTN_QUANTITY_MAX: '.icon-plus',
     LABEL_SIZE_PRODUCT: ':nth-child(2) > .attribute_label',
-    COMBO_SIZE_PRODUCT: '#group_1',
-    OPT_SIZE_PRODUCT: '#group_1 > option:nth-child({index})',//replace para o valor S=1, M=2 e L=3
+    SELECT_SIZE_PRODUCT_CURRENT: '#uniform-group_1 > span',
+    SELECT_SIZE_PRODUCT: '#group_1',
     LABEL_COLOR: ':nth-child(3) > .attribute_label',
     COLOR_OPTION_YELLOW: '#color_13',
     ZOOM_PICTURE: '#bigpic',
@@ -77,26 +77,25 @@ class ShoppingScreenPage{
         let indexNumber;
         switch(size){
             case 'S':
-                indexNumber=1;
+                indexNumber=0;
                 break;
             case 'M':
-                indexNumber=2;
+                indexNumber=1;
                 break;
             case 'L':
-                indexNumber=3;
+                indexNumber=2;
                 break;
             default:
                 throw new Error(`Tamanho não reconhecido: ${size}`);
         }
         cy.get(locators.LABEL_QUANTITY).should('be.visible');
-        cy.get(locators.INPUT_QUANTITY_DESIRED).type(quantity);
+        cy.get(locators.INPUT_QUANTITY_DESIRED).clear().type(quantity);
         this.productQtd = quantity; 
         cy.get(locators.LABEL_SIZE_PRODUCT).should('be.visible');
-        cy.get(locators.COMBO_SIZE_PRODUCT).should('have.text',size).then(($el)=>{
-            if($el.text().trim() !== size){
-                cy.get(locators.COMBO_SIZE_PRODUCT).click().then(()=>{
-                    cy.get(locators.OPT_SIZE_PRODUCT.replace('{index}',indexNumber)).click();
-                });
+        cy.get(locators.SELECT_SIZE_PRODUCT_CURRENT).should('be.visible').then(($el)=>{
+            const actualValue = $el.text().trim();
+            if(actualValue !== size){
+                cy.get(locators.SELECT_SIZE_PRODUCT).select(indexNumber);
             }
         });
         cy.get(locators.LABEL_COLOR).should('be.visible');
