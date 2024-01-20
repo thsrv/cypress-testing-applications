@@ -1,29 +1,29 @@
 [
   {
     "keyword": "Feature",
-    "name": "Registro e Login no site",
+    "name": "Registro e Login de Conta no site",
     "line": 2,
-    "id": "registro-e-login-no-site",
+    "id": "registro-e-login-de-conta-no-site",
     "tags": [
       {
-        "name": "@account",
+        "name": "@ACCOUNT",
         "line": 1
       }
     ],
     "uri": "account.feature",
     "elements": [
       {
-        "id": "registro-e-login-no-site;realiza-o-cadastro",
+        "id": "registro-e-login-de-conta-no-site;realiza-o-cadastro",
         "keyword": "Scenario",
         "line": 8,
         "name": "Realiza o cadastro",
         "tags": [
           {
-            "name": "@account",
+            "name": "@ACCOUNT",
             "line": 1
           },
           {
-            "name": "@CT-THS01",
+            "name": "@CT-AC01",
             "line": 7
           }
         ],
@@ -36,7 +36,7 @@
             "name": "que um usuário acesse o site desejado",
             "result": {
               "status": "passed",
-              "duration": 5383000000
+              "duration": 3140000000
             }
           },
           {
@@ -46,7 +46,7 @@
             "name": "direcionar até a pagina de Cadastro, preencher o e-mail e as informações necessarias para o cadastro",
             "result": {
               "status": "passed",
-              "duration": 5884000000
+              "duration": 5851000000
             }
           },
           {
@@ -56,7 +56,7 @@
             "name": "clicar no botão \"Register\"",
             "result": {
               "status": "passed",
-              "duration": 2191000000
+              "duration": 2053000000
             }
           },
           {
@@ -66,23 +66,23 @@
             "name": "o usuário será registrado com sucesso e será direcionado para a página inicial da conta",
             "result": {
               "status": "passed",
-              "duration": 68000000
+              "duration": 46000000
             }
           }
         ]
       },
       {
-        "id": "registro-e-login-no-site;valida-informar-e-mail-existente-na-tela-de-cadastro",
+        "id": "registro-e-login-de-conta-no-site;valida-informar-e-mail-existente-na-tela-de-cadastro",
         "keyword": "Scenario",
         "line": 14,
         "name": "Valida informar e-mail existente na tela de cadastro",
         "tags": [
           {
-            "name": "@account",
+            "name": "@ACCOUNT",
             "line": 1
           },
           {
-            "name": "@CT-THS02",
+            "name": "@CT-AC02",
             "line": 13
           }
         ],
@@ -95,7 +95,7 @@
             "name": "que um usuário acesse o site desejado",
             "result": {
               "status": "passed",
-              "duration": 1279000000
+              "duration": 1022000000
             }
           },
           {
@@ -105,7 +105,7 @@
             "name": "direcionar até a pagina de Cadastro e informar um e-mail já cadastrado",
             "result": {
               "status": "passed",
-              "duration": 2344000000
+              "duration": 2310000000
             }
           },
           {
@@ -115,33 +115,33 @@
             "name": "clicar no botão \"Create an account\"",
             "result": {
               "status": "passed",
-              "duration": 1127000000
+              "duration": 1120000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 17,
-            "name": "o usuário receberá um alerta de erro informando \"An account using this email address has already been registered. Please enter a valid password or request a new one.\"",
+            "name": "valida o retorno do alerta de erro informando \"An account using this email address has already been registered. Please enter a valid password or request a new one.\"",
             "result": {
               "status": "passed",
-              "duration": 97000000
+              "duration": 55000000
             }
           }
         ]
       },
       {
-        "id": "registro-e-login-no-site;validar-e-mail-inválido-na-tela-de-cadastro",
+        "id": "registro-e-login-de-conta-no-site;validar-e-mail-inválido-na-tela-de-cadastro",
         "keyword": "Scenario",
         "line": 20,
         "name": "Validar e-mail inválido na tela de cadastro",
         "tags": [
           {
-            "name": "@account",
+            "name": "@ACCOUNT",
             "line": 1
           },
           {
-            "name": "@CT-THS03",
+            "name": "@CT-AC03",
             "line": 19
           }
         ],
@@ -154,7 +154,7 @@
             "name": "que um usuário acesse o site desejado",
             "result": {
               "status": "passed",
-              "duration": 1030000000
+              "duration": 992000000
             }
           },
           {
@@ -164,7 +164,7 @@
             "name": "direcionar até a pagina de Cadastro e informar um e-mail inválido",
             "result": {
               "status": "passed",
-              "duration": 1994000000
+              "duration": 2026000000
             }
           },
           {
@@ -174,33 +174,33 @@
             "name": "clicar no botão \"Create an account\"",
             "result": {
               "status": "passed",
-              "duration": 1122000000
+              "duration": 1139000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 23,
-            "name": "o usuário receberá um alerta de erro informando \"Invalid email address.\"",
+            "name": "valida o retorno do alerta de erro informando \"Invalid email address.\"",
             "result": {
               "status": "passed",
-              "duration": 34000000
+              "duration": 73000000
             }
           }
         ]
       },
       {
-        "id": "registro-e-login-no-site;validar-cadastro-de-campos-obrigatórios-na-tela-de-cadastro",
+        "id": "registro-e-login-de-conta-no-site;validar-cadastro-de-campos-obrigatórios-na-tela-de-cadastro",
         "keyword": "Scenario",
         "line": 26,
         "name": "Validar cadastro de campos obrigatórios na tela de cadastro",
         "tags": [
           {
-            "name": "@account",
+            "name": "@ACCOUNT",
             "line": 1
           },
           {
-            "name": "@CT-THS04",
+            "name": "@CT-AC04",
             "line": 25
           }
         ],
@@ -213,7 +213,7 @@
             "name": "que um usuário acesse o site desejado",
             "result": {
               "status": "passed",
-              "duration": 968000000
+              "duration": 1193000000
             }
           },
           {
@@ -223,7 +223,7 @@
             "name": "direcionar até a pagina de Cadastro",
             "result": {
               "status": "passed",
-              "duration": 3481000000
+              "duration": 3570000000
             }
           },
           {
@@ -233,7 +233,7 @@
             "name": "não preencher os campos obrigatórios 'First name, Last name, Email e Password'",
             "result": {
               "status": "passed",
-              "duration": 263000000
+              "duration": 260000000
             }
           },
           {
@@ -243,33 +243,33 @@
             "name": "clicar no botão \"Register\"",
             "result": {
               "status": "passed",
-              "duration": 1713000000
+              "duration": 1617000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 30,
-            "name": "o usuário receberá um alerta de erro \"There are 4 errors\" e deve exibir os campos obrigatórios no alerta de erro",
+            "name": "valida o retorno do alerta de erro \"There are 4 errors\" e deve exibir os campos obrigatórios no alerta de erro",
             "result": {
               "status": "passed",
-              "duration": 174000000
+              "duration": 132000000
             }
           }
         ]
       },
       {
-        "id": "registro-e-login-no-site;validar-login-com-sucesso",
+        "id": "registro-e-login-de-conta-no-site;validar-login-com-usuário-válido",
         "keyword": "Scenario",
         "line": 33,
-        "name": "Validar login com sucesso",
+        "name": "Validar login com usuário válido",
         "tags": [
           {
-            "name": "@account",
+            "name": "@ACCOUNT",
             "line": 1
           },
           {
-            "name": "@CT-THS05",
+            "name": "@CT-AC05",
             "line": 32
           }
         ],
@@ -282,7 +282,7 @@
             "name": "que um usuário acesse o site desejado",
             "result": {
               "status": "passed",
-              "duration": 2062000000
+              "duration": 2135000000
             }
           },
           {
@@ -292,7 +292,7 @@
             "name": "direcionar até a pagina de Login",
             "result": {
               "status": "passed",
-              "duration": 1788000000
+              "duration": 1766000000
             }
           },
           {
@@ -302,7 +302,7 @@
             "name": "usuário preencher o e-mail e senha",
             "result": {
               "status": "passed",
-              "duration": 837000000
+              "duration": 830000000
             }
           },
           {
@@ -312,7 +312,7 @@
             "name": "clicar no botão \"Sign in\"",
             "result": {
               "status": "passed",
-              "duration": 1901000000
+              "duration": 1873000000
             }
           },
           {
@@ -322,7 +322,214 @@
             "name": "valida que o login realizado com sucesso e direcionado para a página inicial da conta",
             "result": {
               "status": "passed",
-              "duration": 64000000
+              "duration": 81000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "registro-e-login-de-conta-no-site;login-com-usuário-incorreto",
+        "keyword": "Scenario",
+        "line": 40,
+        "name": "Login com usuário incorreto",
+        "tags": [
+          {
+            "name": "@ACCOUNT",
+            "line": 1
+          },
+          {
+            "name": "@CT-AC06",
+            "line": 39
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "que um usuário acesse o site desejado",
+            "result": {
+              "status": "passed",
+              "duration": 1017000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 41,
+            "name": "direcionar até a pagina de Login",
+            "result": {
+              "status": "passed",
+              "duration": 1744000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 42,
+            "name": "usuário preencher o e-mail e senha incorreto",
+            "result": {
+              "status": "passed",
+              "duration": 815000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "clicar no botão \"Sign in\"",
+            "result": {
+              "status": "passed",
+              "duration": 1570000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 44,
+            "name": "valida o retorno do alerta de erro de falha na autenticação",
+            "result": {
+              "status": "passed",
+              "duration": 84000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "registro-e-login-de-conta-no-site;validar-login-sem-preencher-a-senha",
+        "keyword": "Scenario",
+        "line": 47,
+        "name": "Validar login sem preencher a senha",
+        "tags": [
+          {
+            "name": "@ACCOUNT",
+            "line": 1
+          },
+          {
+            "name": "@CT-AC07",
+            "line": 46
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "que um usuário acesse o site desejado",
+            "result": {
+              "status": "passed",
+              "duration": 1364000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 48,
+            "name": "direcionar até a pagina de Login",
+            "result": {
+              "status": "passed",
+              "duration": 1851000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 49,
+            "name": "usuário não preencher o campo \"Password\" obrigatório",
+            "result": {
+              "status": "passed",
+              "duration": 513000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 50,
+            "name": "clicar no botão \"Sign in\"",
+            "result": {
+              "status": "passed",
+              "duration": 1567000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 51,
+            "name": "valida o retorno do alerta de erro do campo \"Password is required.\"",
+            "result": {
+              "status": "passed",
+              "duration": 79000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "registro-e-login-de-conta-no-site;validar-login-sem-preencher-o-email",
+        "keyword": "Scenario",
+        "line": 54,
+        "name": "Validar login sem preencher o email",
+        "tags": [
+          {
+            "name": "@ACCOUNT",
+            "line": 1
+          },
+          {
+            "name": "@CT-AC08",
+            "line": 53
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "que um usuário acesse o site desejado",
+            "result": {
+              "status": "passed",
+              "duration": 945000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 55,
+            "name": "direcionar até a pagina de Login",
+            "result": {
+              "status": "passed",
+              "duration": 1776000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 56,
+            "name": "usuário não preencher o campo \"Email\" obrigatório",
+            "result": {
+              "status": "passed",
+              "duration": 377000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 57,
+            "name": "clicar no botão \"Sign in\"",
+            "result": {
+              "status": "passed",
+              "duration": 1653000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 58,
+            "name": "valida o retorno do alerta de erro do campo \"An email address required.\"",
+            "result": {
+              "status": "passed",
+              "duration": 54000000
             }
           }
         ]
