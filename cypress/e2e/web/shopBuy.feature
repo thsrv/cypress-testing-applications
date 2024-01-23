@@ -17,3 +17,17 @@ Feature: Compra de produtos no site
         And selecionar o endereço de entrega "My home" e prosseguir para o checkout aceitando os termos de serviço
         And usuário selecionar e confirmar a forma de pagamento
         Then o site deve realizar a compra do produto com sucesso "Your order on My Shop is complete."
+
+    @CT-SB02
+    Scenario: Realizar a compra mais de 2 produtos
+        When usuário selecionar a categoria desejada
+        And selecionar "3" produtos da lista no carrinho de compras
+        And usuário finalizar a compra 
+        Then o site deve realizar a compra dos produtos com sucesso
+
+    @CT-SB03
+    Scenario: Realizar a compra do produto com o melhor desconto
+        When usuário navegar até a guia de descontos especial e visualizar os produtos
+        And selecionar o produto com o desconto maior
+        And adicionar ao carrinho e finalizar a compra
+        Then o site deve realizar a compra do produto com sucesso "Your order on My Shop is complete."

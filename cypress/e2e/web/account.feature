@@ -56,3 +56,7 @@ Feature: Registro e Login de Conta no site
         And usuário não preencher o campo "Email" obrigatório
         And clicar no botão "Sign in"
         Then valida o retorno do alerta de erro do campo "An email address required."
+
+    # @CT-AC09
+    # Scenario: Realizar cadastro de endereço para conta
+    #     When direcionar até a pagina de Login

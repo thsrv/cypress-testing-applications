@@ -6,7 +6,7 @@ const { ctibor, xayrullo } = require("gender-detection/genders/male");
 const locators = {
     BTN_HOME: 'li > .btn > span',
     MENU_WOMEN: '.sf-menu > :nth-child(1) > [href="http://www.automationpractice.pl/index.php?id_category=3&controller=category"]',
-    FIRST_PRODUCT_LIST: '#center_column > ul > li:nth-child(1) > div > div.right-block > h5 > a',
+    PRODUCT_LIST: '#center_column > ul > li:nth-child({index}) > div > div.right-block > h5 > a',
     NAME_PRODUCT: '#center_column > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1',
     PRICE_PRODUCT: '#our_price_display',
     PRODUCT_AVAILABILITY: '#availability_value',
@@ -37,6 +37,10 @@ const locators = {
     CHECK_TERM_SERVICE: '#cgv',
     TYPE_PAYMENT: '.bankwire',
     ALERT_ORDER_COMPLETE: '.alert',
+    GUIDE_SPECIAL: '#special_block_right > .title_block > a',
+    BTN_ALL_PRODUCT_SPECIAL: '#special_block_right > .block_content > :nth-child(2) > .btn > span',
+    BEST_PERCENT_PRICE: '.first-in-line > .product-container > .right-block > .content_price > .price-percent-reduction',
+    BEST_PRODUCT_DISCOUNT: '.first-in-line > .product-container > .right-block > h5 > .product-name',
 }
 
 
@@ -59,10 +63,10 @@ class ShoppingScreenPage{
         cy.get(locators.MENU_WOMEN).click();
     }
 
-    selectItem(){
-        cy.get(locators.FIRST_PRODUCT_LIST).should('be.visible').then(()=>{
-            cy.get(locators.FIRST_PRODUCT_LIST).click();
-        });
+    selectItem(idProduct){
+        cy.get(locators.PRODUCT_LIST.replace('{index}',idProduct))
+            .should('be.visible')
+            .click();
     }
 
     insertProductInforTheOrder(quantity,size){
@@ -96,18 +100,24 @@ class ShoppingScreenPage{
             }
         });
         this.productQtd = quantity;
-        cy.get(locators.LABEL_COLOR).should('be.visible');
-        cy.get(locators.COLOR_OPTION_YELLOW).click();
+        // cy.get(locators.LABEL_COLOR).should('be.visible');
+        // cy.get(locators.COLOR_OPTION_YELLOW).click();
     }
 
     toCheckProductStock(){
         cy.get(locators.PRODUCT_AVAILABILITY).should('include.text','In stock');
     }
 
-    addProduct(){
+    addProduct(shouldContinueShopping){
         cy.get(locators.BTN_ADD_CART).should('be.visible').click().then(()=>{
-            cy.get(locators.TXT_CONFIRM_CART_PRODUCT).should('be.visible');
-            cy.get(locators.BTN_PROCED_CHECKOUT).should('be.visible').click();
+            
+            cy.get(locators.TXT_CONFIRM_CART_PRODUCT).scrollIntoView().should('be.visible');
+            if(shouldContinueShopping){
+                cy.get(locators.BTN_CONTINUE_SHOP).should('be.visible').click();
+            }else{
+                cy.get(locators.BTN_PROCED_CHECKOUT).should('be.visible').click();
+            }
+            
         });
     }
 
@@ -161,6 +171,18 @@ class ShoppingScreenPage{
         cy.get(locators.ALERT_ORDER_COMPLETE)
             .should('be.visible')
             .should('contain',msg);
+    }
+
+    goToSpecialProducts(){
+        cy.get(locators.GUIDE_SPECIAL)
+            .scrollIntoView()
+            .should('be.visible');
+        cy.get(locators.BTN_ALL_PRODUCT_SPECIAL).click();
+    }
+
+    selectProductTheBestDiscount(){
+        cy.get(locators.BEST_PERCENT_PRICE).should('be.visible');
+        cy.get(locators.BEST_PRODUCT_DISCOUNT).click();
     }
 }
 

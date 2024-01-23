@@ -35,8 +35,221 @@
             "line": 5,
             "name": "que um usuário acesse o site desejado",
             "result": {
+              "status": "failed",
+              "duration": 10427000000,
+              "error_message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://www.automationpractice.pl/\n\nThe response we received from your web server was:\n\n  > 503: Service Unavailable\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at <unknown> (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:130960:76)\n    at visitFailedByErr (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:130374:12)\n    at <unknown> (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:130943:13)\n    at tryCatcher (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:2407:12)\nFrom previous event:\n    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:3486:19)\n    at Promise._then (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:1239:17)\n    at Promise._passThrough (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:4110:17)\n    at Promise.lastly.Promise.finally (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:4119:17)\n    at Object.onRunnableRun (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:163074:53)\n    at $Cypress.action (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:41042:28)\n    at Runnable.run (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:145662:13)\n    at next (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:155447:10)\n    at <unknown> (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:155491:5)\n    at timeslice (http://www.automationpractice.pl/__cypress/runner/cypress_runner.js:146002:27)\nFrom Your Spec Code:\n    at LoginPage.acessWebsite (cypress/support/page/LoginPage.js:40:11)\n    at Context.eval (cypress/support/step-definitions/web/LoginStep.js:8:14)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "realiza o Login com usuário especifico",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "esteja na pagina inicial do site",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "usuário selecionar a categoria desejada",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "exibir a lista de itens e selecionar o produto para visualizar os detalhes",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "usuário selecionar a quantidade, tamanho e cor desejada",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "usuário verifica se o produto tem estoque",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "clicar em \"Add to cart\" e prosseguir para o checkout com o produto no carrinho",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "usuário validar as informações de valores no resumo da compra",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "selecionar o endereço de entrega \"My home\" e prosseguir para o checkout aceitando os termos de serviço",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "usuário selecionar e confirmar a forma de pagamento",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "o site deve realizar a compra do produto com sucesso \"Your order on My Shop is complete.\"",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "compra-de-produtos-no-site;realizar-a-compra-mais-de-2-produtos",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Realizar a compra mais de 2 produtos",
+        "tags": [
+          {
+            "name": "@SHOPBUY",
+            "line": 1
+          },
+          {
+            "name": "@CT-SB02",
+            "line": 22
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "que um usuário acesse o site desejado",
+            "result": {
               "status": "passed",
-              "duration": 2974000000
+              "duration": 6553000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "realiza o Login com usuário especifico",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#email`, but never found it.\n    at LoginPage.loginWithUser (cypress/support/page/LoginPage.js:151:15)\n    at Context.eval (cypress/support/step-definitions/web/LoginStep.js:13:14)\n    at Context.resolveAndRunStepDefinition (node_modules/cypress-cucumber-preprocessor/lib/resolveStepDefinition.js:193:0)\n    at Context.eval (node_modules/cypress-cucumber-preprocessor/lib/createTestFromScenario.js:27:0)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "esteja na pagina inicial do site",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 24,
+            "name": "usuário selecionar a categoria desejada",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 25,
+            "name": "selecionar \"3\" produtos da lista no carrinho de compras",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "usuário finalizar a compra",
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 27,
+            "name": "o site deve realizar a compra dos produtos com sucesso",
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "compra-de-produtos-no-site;realizar-a-compra-do-produto-com-o-melhor-desconto",
+        "keyword": "Scenario",
+        "line": 32,
+        "name": "Realizar a compra do produto com o melhor desconto",
+        "tags": [
+          {
+            "name": "@SHOPBUY",
+            "line": 1
+          },
+          {
+            "name": "@CT-SB03",
+            "line": 31
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "que um usuário acesse o site desejado",
+            "result": {
+              "status": "passed",
+              "duration": 2844000000
             }
           },
           {
@@ -46,7 +259,7 @@
             "name": "realiza o Login com usuário especifico",
             "result": {
               "status": "passed",
-              "duration": 5057000000
+              "duration": 5235000000
             }
           },
           {
@@ -56,97 +269,47 @@
             "name": "esteja na pagina inicial do site",
             "result": {
               "status": "passed",
-              "duration": 2436000000
+              "duration": 2687000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 11,
-            "name": "usuário selecionar a categoria desejada",
+            "line": 33,
+            "name": "usuário navegar até a guia de descontos especial e visualizar os produtos",
             "result": {
               "status": "passed",
-              "duration": 858000000
+              "duration": 3066000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 12,
-            "name": "exibir a lista de itens e selecionar o produto para visualizar os detalhes",
+            "line": 34,
+            "name": "selecionar o produto com o desconto maior",
             "result": {
               "status": "passed",
-              "duration": 707000000
+              "duration": 1659000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 13,
-            "name": "usuário selecionar a quantidade, tamanho e cor desejada",
+            "line": 35,
+            "name": "adicionar ao carrinho e finalizar a compra",
             "result": {
               "status": "passed",
-              "duration": 813000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 14,
-            "name": "usuário verifica se o produto tem estoque",
-            "result": {
-              "status": "passed",
-              "duration": 27000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 15,
-            "name": "clicar em \"Add to cart\" e prosseguir para o checkout com o produto no carrinho",
-            "result": {
-              "status": "passed",
-              "duration": 1163000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 16,
-            "name": "usuário validar as informações de valores no resumo da compra",
-            "result": {
-              "status": "passed",
-              "duration": 859000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 17,
-            "name": "selecionar o endereço de entrega \"My home\" e prosseguir para o checkout aceitando os termos de serviço",
-            "result": {
-              "status": "passed",
-              "duration": 1685000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 18,
-            "name": "usuário selecionar e confirmar a forma de pagamento",
-            "result": {
-              "status": "passed",
-              "duration": 3891000000
+              "duration": 10881000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 19,
+            "line": 36,
             "name": "o site deve realizar a compra do produto com sucesso \"Your order on My Shop is complete.\"",
             "result": {
               "status": "passed",
-              "duration": 54000000
+              "duration": 44000000
             }
           }
         ]
