@@ -30,7 +30,7 @@
 
 Projeto organizado com Page Objects, Cucumber e Gherkin.
 
-## Site de Teste 🌐
+## Ambiente de Teste 🌐
 
 Os testes web foram realizados no site de e-commerce [Automation Practice](http://www.automationpractice.pl/).
 
