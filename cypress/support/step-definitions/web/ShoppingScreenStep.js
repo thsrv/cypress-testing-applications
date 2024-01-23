@@ -31,19 +31,24 @@ When(/^clicar em "([^"]*)" e prosseguir para o checkout com o produto no carrinh
 
 When(/^usuário validar as informações de valores no resumo da compra$/, () => {
 	shoppingSreeenPage.resumeMyOrder(7);
+	shoppingSreeenPage.advanceStepOrder();
 });
 
-When(/^selecionar o endereço de entrega "([^"]*)" e prosseguir para o checkout aceitando os termos de serviço$/, (args1) => {
-	console.log(args1);
-	return true;
+When(/^selecionar o endereço de entrega "([^"]*)" e prosseguir para o checkout aceitando os termos de serviço$/, (adress) => {
+	shoppingSreeenPage.selectAddressDelivery(adress);
+	shoppingSreeenPage.checkAdressDelivery();
+	shoppingSreeenPage.advanceStepOrder();
+	shoppingSreeenPage.acceptTerms();
+	shoppingSreeenPage.advanceStepOrder();
 });
 
 When(/^usuário selecionar e confirmar a forma de pagamento$/, () => {
-	return true;
+	shoppingSreeenPage.selectPayBank();
+	shoppingSreeenPage.advanceStepOrder();
+
 });
 
-Then(/^o site deve realizar a compra do produto com sucesso "([^"]*)"$/, (args1) => {
-	console.log(args1);
-	return true;
+Then(/^o site deve realizar a compra do produto com sucesso "([^"]*)"$/, (msg) => {
+	shoppingSreeenPage.validateOrderSucess(msg);
 });
 

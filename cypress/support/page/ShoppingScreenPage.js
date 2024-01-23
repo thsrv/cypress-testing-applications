@@ -31,8 +31,7 @@ const locators = {
     AMOUNT_TOTAL_ORDER: '#total_price',
     BTN_ADVANCE: '.cart_navigation > .button > span',
     LABEL_ADDRESS_DELIVERY: '.address_delivery > label',
-    COMBO_ADDRESS_DELIVERY: '#id_address_delivery',
-    LABEL_ADDRESS_BILLING: '.checkbox > label',
+    SELECT_ADDRESS_DELIVERY: '#id_address_delivery',
     CHECK_BILLING: '#addressesAreEquals',
     LABEL_TERM_SERVICE: '.order_carrier_content > :nth-child(4)',
     CHECK_TERM_SERVICE: '#cgv',
@@ -125,6 +124,44 @@ class ShoppingScreenPage{
             .should('equal','$'+totalOrder.toString());
     }
 
+    advanceStepOrder(){
+        cy.get(locators.BTN_ADVANCE).should('be.visible').click();
+        cy.log('Avançando para proxima etapa...')
+    }
+
+    selectAddressDelivery(address){
+        cy.get('#uniform-id_address_delivery > span').should('be.visible').then(($el)=>{
+            const actualValue = $el.text().trim();
+            if(actualValue !== address){
+                cy.get(locators.SELECT_ADDRESS_DELIVERY).select(address);
+            }
+        });
+    }
+
+    checkAdressDelivery(){
+        cy.get(locators.CHECK_BILLING).then(($checkbox)=>{
+            if(!$checkbox.is(':checked')){
+                cy.get(locators.CHECK_BILLING).check();
+            }else{
+                cy.get(locators.CHECK_BILLING).should('be.checked');
+            }
+        });
+    }
+    
+    acceptTerms(){
+        cy.get(locators.LABEL_TERM_SERVICE).should('be.visible');
+        cy.get(locators.CHECK_TERM_SERVICE).check();
+    }
+
+    selectPayBank(){
+        cy.get(locators.TYPE_PAYMENT).click();
+    }
+
+    validateOrderSucess(msg){
+        cy.get(locators.ALERT_ORDER_COMPLETE)
+            .should('be.visible')
+            .should('contain',msg);
+    }
 }
 
 module.exports = new ShoppingScreenPage();
