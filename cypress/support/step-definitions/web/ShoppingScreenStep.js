@@ -22,16 +22,15 @@ When(/^usuário selecionar a quantidade, tamanho e cor desejada$/, () => {
 });
 
 When(/^usuário verifica se o produto tem estoque$/, () => {
-
+	shoppingSreeenPage.toCheckProductStock();
 });
 
 When(/^clicar em "([^"]*)" e prosseguir para o checkout com o produto no carrinho$/, (args1) => {
-	console.log(args1);
-	return true;
+	shoppingSreeenPage.addProduct();
 });
 
 When(/^usuário validar as informações de valores no resumo da compra$/, () => {
-	return true;
+	shoppingSreeenPage.resumeMyOrder(7);
 });
 
 When(/^selecionar o endereço de entrega "([^"]*)" e prosseguir para o checkout aceitando os termos de serviço$/, (args1) => {

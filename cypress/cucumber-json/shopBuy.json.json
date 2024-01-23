@@ -36,7 +36,7 @@
             "name": "que um usuário acesse o site desejado",
             "result": {
               "status": "passed",
-              "duration": 2937000000
+              "duration": 2928000000
             }
           },
           {
@@ -46,7 +46,7 @@
             "name": "realiza o Login com usuário especifico",
             "result": {
               "status": "passed",
-              "duration": 4916000000
+              "duration": 5117000000
             }
           },
           {
@@ -56,7 +56,7 @@
             "name": "esteja na pagina inicial do site",
             "result": {
               "status": "passed",
-              "duration": 2597000000
+              "duration": 2777000000
             }
           },
           {
@@ -66,7 +66,7 @@
             "name": "usuário selecionar a categoria desejada",
             "result": {
               "status": "passed",
-              "duration": 1065000000
+              "duration": 1245000000
             }
           },
           {
@@ -76,7 +76,7 @@
             "name": "exibir a lista de itens e selecionar o produto para visualizar os detalhes",
             "result": {
               "status": "passed",
-              "duration": 3490000000
+              "duration": 1380000000
             }
           },
           {
@@ -86,7 +86,7 @@
             "name": "usuário selecionar a quantidade, tamanho e cor desejada",
             "result": {
               "status": "passed",
-              "duration": 1317000000
+              "duration": 1215000000
             }
           },
           {
@@ -96,7 +96,7 @@
             "name": "usuário verifica se o produto tem estoque",
             "result": {
               "status": "passed",
-              "duration": 9000000
+              "duration": 42000000
             }
           },
           {
@@ -106,7 +106,7 @@
             "name": "clicar em \"Add to cart\" e prosseguir para o checkout com o produto no carrinho",
             "result": {
               "status": "passed",
-              "duration": 9000000
+              "duration": 2453000000
             }
           },
           {
@@ -116,7 +116,7 @@
             "name": "usuário validar as informações de valores no resumo da compra",
             "result": {
               "status": "passed",
-              "duration": 10000000
+              "duration": 203000000
             }
           },
           {
@@ -126,7 +126,7 @@
             "name": "selecionar o endereço de entrega \"My home\" e prosseguir para o checkout aceitando os termos de serviço",
             "result": {
               "status": "passed",
-              "duration": 9000000
+              "duration": 10000000
             }
           },
           {
@@ -136,7 +136,7 @@
             "name": "usuário selecionar e confirmar a forma de pagamento",
             "result": {
               "status": "passed",
-              "duration": 11000000
+              "duration": 9000000
             }
           },
           {
@@ -146,7 +146,7 @@
             "name": "o site deve realizar a compra do produto com sucesso \"Your order on My Shop is complete.\"",
             "result": {
               "status": "passed",
-              "duration": 10000000
+              "duration": 9000000
             }
           }
         ]

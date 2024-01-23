@@ -7,7 +7,7 @@ const locators = {
     BTN_HOME: 'li > .btn > span',
     MENU_WOMEN: '.sf-menu > :nth-child(1) > [href="http://www.automationpractice.pl/index.php?id_category=3&controller=category"]',
     FIRST_PRODUCT_LIST: '#center_column > ul > li:nth-child(1) > div > div.right-block > h5 > a',
-    NAME_PRODUCT: 'h1',
+    NAME_PRODUCT: '#center_column > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1',
     PRICE_PRODUCT: '#our_price_display',
     PRODUCT_AVAILABILITY: '#availability_value',
     LABEL_QUANTITY: "#quantity_wanted_p > label",
@@ -19,17 +19,16 @@ const locators = {
     SELECT_SIZE_PRODUCT: '#group_1',
     LABEL_COLOR: ':nth-child(3) > .attribute_label',
     COLOR_OPTION_YELLOW: '#color_13',
-    ZOOM_PICTURE: '#bigpic',
-    CLOSE_ZOOM_PICTURE: '.fancybox-item',
     BTN_ADD_CART: '.exclusive > span',
     TXT_CONFIRM_CART_PRODUCT: '.layer_cart_product > h2',
     BTN_PROCED_CHECKOUT: '.button-medium > span',
     BTN_CONTINUE_SHOP: '.continue > span',
     TXT_TITLE_CART_SUMMARY: '#cart_title',
     CURRENT_STATUS_BAR: '.step_current > span',
+    NAME_PRODUCT_RESUME: '.cart_description > .product-name > a',
     AMOUNT_TOTAL_PRODUCT: '#total_product',
     AMOUNT_TOTAL_SHIPPING: '#total_shipping',
-    AMOUNT_PRICE_TOTAL: '#total_price',
+    AMOUNT_TOTAL_ORDER: '#total_price',
     BTN_ADVANCE: '.cart_navigation > .button > span',
     LABEL_ADDRESS_DELIVERY: '.address_delivery > label',
     COMBO_ADDRESS_DELIVERY: '#id_address_delivery',
@@ -44,11 +43,12 @@ const locators = {
 
 class ShoppingScreenPage{
 
-    constructor(){
-        this.productName = null;
-        this.productPrice = null;
-        this.productQtd = null; 
+    constructor(productName,productPrice,quantity){
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productQtd = quantity; 
     }
+
 
     goHome(time){
         cy.get(locators.BTN_HOME).click().then(()=>{
@@ -62,14 +62,7 @@ class ShoppingScreenPage{
 
     selectItem(){
         cy.get(locators.FIRST_PRODUCT_LIST).should('be.visible').then(()=>{
-            cy.get(locators.FIRST_PRODUCT_LIST).click().then(()=>{
-                this.productName = cy.get(locators.NAME_PRODUCT).should('be.visible').invoke('text');
-                this.productPrice = cy.get(locators.PRICE_PRODUCT).should('be.visible').invoke('text');
-                cy.get(locators.ZOOM_PICTURE).click().then(()=>{
-                    cy.wait(2000);
-                    cy.get(locators.CLOSE_ZOOM_PICTURE).click();
-                });
-            });
+            cy.get(locators.FIRST_PRODUCT_LIST).click();
         });
     }
 
@@ -88,9 +81,14 @@ class ShoppingScreenPage{
             default:
                 throw new Error(`Tamanho não reconhecido: ${size}`);
         }
+        cy.get(locators.NAME_PRODUCT).should('be.visible').invoke('text').then((productName)=>{
+            this.productName = productName;
+        });
+        cy.get(locators.PRICE_PRODUCT).should('be.visible').invoke('text').then((productPrice)=>{
+            this.productPrice = productPrice;
+        });
         cy.get(locators.LABEL_QUANTITY).should('be.visible');
         cy.get(locators.INPUT_QUANTITY_DESIRED).clear().type(quantity);
-        this.productQtd = quantity; 
         cy.get(locators.LABEL_SIZE_PRODUCT).should('be.visible');
         cy.get(locators.SELECT_SIZE_PRODUCT_CURRENT).should('be.visible').then(($el)=>{
             const actualValue = $el.text().trim();
@@ -98,8 +96,33 @@ class ShoppingScreenPage{
                 cy.get(locators.SELECT_SIZE_PRODUCT).select(indexNumber);
             }
         });
+        this.productQtd = quantity;
         cy.get(locators.LABEL_COLOR).should('be.visible');
         cy.get(locators.COLOR_OPTION_YELLOW).click();
+    }
+
+    toCheckProductStock(){
+        cy.get(locators.PRODUCT_AVAILABILITY).should('include.text','In stock');
+    }
+
+    addProduct(){
+        cy.get(locators.BTN_ADD_CART).should('be.visible').click().then(()=>{
+            cy.get(locators.TXT_CONFIRM_CART_PRODUCT).should('be.visible');
+            cy.get(locators.BTN_PROCED_CHECKOUT).should('be.visible').click();
+        });
+    }
+
+    resumeMyOrder(amountDelevery){
+        cy.get(locators.TXT_TITLE_CART_SUMMARY).should('be.visible');
+        cy.get(locators.AMOUNT_TOTAL_PRODUCT).should('contain', this.productPrice);
+        cy.get(locators.NAME_PRODUCT_RESUME).should('contain',this.productName);
+        const productPriceNum = parseFloat(String(this.productPrice).replace('$', ''));
+       
+        const totalOrder = (productPriceNum * this.productQtd) + amountDelevery;
+        cy.get(locators.AMOUNT_TOTAL_ORDER)
+            .should('be.visible')
+            .invoke('text')
+            .should('equal','$'+totalOrder.toString());
     }
 
 }
