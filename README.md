@@ -58,5 +58,5 @@ Os testes web foram realizados no site de e-commerce [Automation Practice](http:
 
 Este projeto continuará recebendo atualizações, incluindo:
 - Testes backend com testes de APIs.
-- Testes em bancos de dados.
+- Testes validando dados em banco.
 - Exploração de testes em diferentes sites e plataformas.
